@@ -1,6 +1,10 @@
 package com.vatit.technicalassessment.ToDoapi.controller.json;
 
 public class ToDos {
+    
+    //JSON class for the Error Message.
+    //toDos Paramater: Contains a array of ToDo Objects.
+    
     @io.swagger.annotations.ApiModelProperty(notes = "List of ToDos")
     @com.google.gson.annotations.SerializedName("todos")
     @com.google.gson.annotations.Expose

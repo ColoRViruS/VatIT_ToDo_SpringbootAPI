@@ -4,6 +4,10 @@ package com.vatit.technicalassessment.ToDoapi.controller;
 @io.swagger.annotations.SwaggerDefinition(schemes = io.swagger.annotations.SwaggerDefinition.Scheme.HTTP)
 public class ToDoController {
     
+    
+    //GET Method for the API. This method retrieves a JSON object that contains an array of ToDo Items.
+    //Represents the Retrieve portion of the CRUD model
+    
     @org.springframework.web.bind.annotation.RequestMapping(value = "/todos/", method = org.springframework.web.bind.annotation.RequestMethod.GET)
     @io.swagger.annotations.ApiOperation(value = "Get a List of ToDos")
     @io.swagger.annotations.ApiResponses({
@@ -24,6 +28,9 @@ public class ToDoController {
         }
     }
     
+    //POST Method for the API. This method retrieves only a Response Code to represent success or failure.
+    //Represents the Create portion of the CRUD model
+    
     @org.springframework.web.bind.annotation.PostMapping(path = "/todos/", consumes = "application/json")
     @io.swagger.annotations.ApiOperation(value = "Add a ToDos to the List")
 
@@ -41,6 +48,10 @@ public class ToDoController {
         }
     }
     
+    //PUT Method for the API. This method consumes a ToDo JSON object with which
+    // to update the In-Memory storage with new Name of Completed value
+    //Represents the Update portion of the CRUD model
+    
     @org.springframework.web.bind.annotation.PutMapping("/todos/{aUrlParameter}")
     @io.swagger.annotations.ApiOperation(value = "Update a ToDo")
     @io.swagger.annotations.ApiResponses({
@@ -53,7 +64,7 @@ public class ToDoController {
     throws com.vatit.technicalassessment.ToDoapi.exception.InternalServerError {
         
         if ( com.vatit.technicalassessment.ToDoapi.ToDoList.getToDoHashMap().containsKey(aUrlParameter) ) {
-            com.vatit.technicalassessment.ToDoapi.ToDoList.UpdateToDO(aToDo);
+            com.vatit.technicalassessment.ToDoapi.ToDoList.UpdateToDo(aToDo);
         }else {
             throw new com.vatit.technicalassessment.ToDoapi.exception.InternalServerError();
         }
@@ -61,6 +72,10 @@ public class ToDoController {
         com.google.gson.Gson vGson = new com.google.gson.Gson();
         return vGson.toJson(aToDo);
     }
+    
+    //DELETE Method for the API. This method retrieves a ID string from
+    // the URL which represents the ID of the ToDo that should be removed
+    //Represents the Delete or Destory portion of the CRUD model
     
     @org.springframework.web.bind.annotation.DeleteMapping("/todos/{aUrlParameter}")
     @io.swagger.annotations.ApiOperation(value = "Remove a ToDo", httpMethod = "")
@@ -77,6 +92,7 @@ public class ToDoController {
         }
     }
     
+    //This method is the Exception handler that will present the user with a Error message if there is something wrong in the System.
     
     @org.springframework.web.bind.annotation.ExceptionHandler(com.vatit.technicalassessment.ToDoapi.exception.InternalServerError.class)
     @org.springframework.web.bind.annotation.ResponseStatus(org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR)

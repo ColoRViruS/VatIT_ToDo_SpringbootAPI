@@ -1,6 +1,12 @@
 package com.vatit.technicalassessment.ToDoapi.controller.json;
 
 public class ToDo {
+    
+    //JSON class for the ToDo Item.
+    //id Paramater: Represents a Unique ID for each ToDo.
+    //Name Paramater: The task's name.
+    //Completed Paramater: a flag to indicate the completeness of the Task.
+    
     @io.swagger.annotations.ApiModelProperty(notes = "The unique id of the ToDo")
     @com.google.gson.annotations.SerializedName("id")
     @com.google.gson.annotations.Expose

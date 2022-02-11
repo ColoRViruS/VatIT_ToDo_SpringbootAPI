@@ -11,12 +11,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 public class ToDoListApplication {
     
-    
+    //Main Method which starts the entire program
     public static void main( String[] args ) {
         SpringApplication.run(ToDoListApplication.class ,args);
         ToDoList.addToDO(new com.vatit.technicalassessment.ToDoapi.controller.json.ToDo("Do some work" ,false));
     }
-    
+    //Configurations for the Swagger UI page.
     @org.springframework.context.annotation.Bean
     public springfox.documentation.spring.web.plugins.Docket SwaggerConfig( ) {
         return new springfox.documentation.spring.web.plugins.Docket(springfox.documentation.spi.DocumentationType.SWAGGER_2)
@@ -28,6 +28,7 @@ public class ToDoListApplication {
           .apiInfo(BuildApiDetails());
     }
     
+    //App Information that will be displayed at the top of the Swagger UI Page
     private springfox.documentation.service.ApiInfo BuildApiDetails( ) {
         return new springfox.documentation.service.ApiInfo(
           "ToDo API" ,

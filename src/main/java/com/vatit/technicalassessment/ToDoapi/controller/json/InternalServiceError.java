@@ -2,6 +2,9 @@ package com.vatit.technicalassessment.ToDoapi.controller.json;
 
 public class InternalServiceError {
     
+    //JSON class for the Error Message.
+    //Message Paramater: Contains a Static message.
+    
     @io.swagger.annotations.ApiModelProperty(notes = "Error Message")
     @com.google.gson.annotations.SerializedName("message")
     @com.google.gson.annotations.Expose
