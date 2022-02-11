@@ -22,8 +22,8 @@ public class ToDoListApplication {
         return new springfox.documentation.spring.web.plugins.Docket(springfox.documentation.spi.DocumentationType.SWAGGER_2)
           .useDefaultResponseMessages(false)
           .select()
-          .paths(springfox.documentation.builders.PathSelectors.ant("/todos/*"))
-          .apis(springfox.documentation.builders.RequestHandlerSelectors.basePackage("com.vatit.technicalassessment"))
+//          .paths(springfox.documentation.builders.PathSelectors.ant("/todos/*"))
+          .apis(springfox.documentation.builders.RequestHandlerSelectors.basePackage("com.vatit.technicalassessment.ToDoapi"))
           .build()
           .apiInfo(BuildApiDetails());
     }
