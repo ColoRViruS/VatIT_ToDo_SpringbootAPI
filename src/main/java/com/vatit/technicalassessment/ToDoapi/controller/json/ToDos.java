@@ -1,7 +1,7 @@
 package com.vatit.technicalassessment.ToDoapi.controller.json;
 
 public class ToDos {
-    
+    @io.swagger.annotations.ApiModelProperty(notes = "List of ToDos")
     @com.google.gson.annotations.SerializedName("todos")
     @com.google.gson.annotations.Expose
     private java.util.ArrayList<com.vatit.technicalassessment.ToDoapi.controller.json.ToDo> toDos;

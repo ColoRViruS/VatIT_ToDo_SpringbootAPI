@@ -1,12 +1,15 @@
 package com.vatit.technicalassessment.ToDoapi.controller.json;
 
 public class ToDo {
+    @io.swagger.annotations.ApiModelProperty(notes = "The unique id of the ToDo")
     @com.google.gson.annotations.SerializedName("id")
     @com.google.gson.annotations.Expose
     String  id;
+    @io.swagger.annotations.ApiModelProperty(notes = "Name of the ToDo")
     @com.google.gson.annotations.SerializedName("name")
     @com.google.gson.annotations.Expose
     String  name;
+    @io.swagger.annotations.ApiModelProperty(notes = "Flag for if the ToDo is Completed or Not")
     @com.google.gson.annotations.SerializedName("completed")
     @com.google.gson.annotations.Expose
     boolean completed;
